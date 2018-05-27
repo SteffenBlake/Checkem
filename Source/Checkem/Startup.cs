@@ -110,6 +110,10 @@ namespace Checkem
                 if (string.IsNullOrEmpty(name))
                     continue;
 
+                // Ignore Unity Trusts too
+                if (name.Contains("(UC)"))
+                    continue;
+
                 var hasTrust = instance.Player.HasSpell(spell.Index);
                 var icon = spell.ListIcon2;
 
